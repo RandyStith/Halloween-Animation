@@ -71,8 +71,98 @@ body {
   top: 2.8em;
 }
 
-.pumkin .eye .right {
+.pumkin .eye.right {
   right: 3.7em;
-  border-left: 2.4 solid #401b03;
-  
+  border-left: 2.4em solid #401b03;
+  border-bottom: 2.1em solid transparent;
+  transform: rotate(30deg);
+}
+
+.pumkin .eye.left {
+  left: 3.7em;
+  transform: rotate(-30deg);
+  border-bottom: 2.1em solid transparent;
+  border-right: 2.4em solid #401b03;
+}
+
+.pumkin .mouth {
+  border-bottom: 1em solid #401b03;
+  position: absolute;
+  width: 4em;
+  height: 2em;
+  bottom: 1.5em;
+}
+
+.pumkin .mouth.right {
+  right: 3.6em;
+  border-radius: 0 0 100% 0;
+  }
+
+.pumkin .mouth.left {
+  left: 3.6em;
+  border-radius: 0 0 0 100%;
+  }
+
+.pumkin .teeth {
+  border-left: 0.8em solid #401b03;
+  border-bottom: 0 solid transparent;
+  border-top: 0.8em solid transparent;
+  width: 0.5em;
+  height: 1em;
+  position: absolute;
+  top: 7.7em;
+  left: 7.25em;
+}
+
+.pumkin .teeth::before,
+.pumkin .teeth::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0em;
+  height: 0em;
+  border-top: 0.8em solid transparent;
+}
+
+.pumkin .teeth::before {
+  right: 2.2em;
+  top: -0.65em;
+  transform: rotate(30deg);
+  border-bottom: 0.5 solid transparent;
+  border-left: 1em solid #401b03;
+}
+
+.pumkin .teeth::after {
+  left: 2.2em;
+  top: -0.65em;
+  transform: rotate(30deg);
+  border-bottom: 0.5 solid transparent;
+  border-left: 1em solid #401b03;
+}
+
+.shadow {
+  margin: 10% auto 0;
+  background: #000;
+  width: 230px;
+  height: 50px;
+  border-radius: 50%;
+  animation: zoom 3s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
 }
